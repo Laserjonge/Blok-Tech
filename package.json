@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/Laserjonge/Blok-Tech/issues"
   },
-  "homepage": "https://github.com/Laserjonge/Blok-Tech#readme"
+  "homepage": "https://github.com/Laserjonge/Blok-Tech#readme",
+  "dependencies": {
+    "camelcase": "^6.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
 }
