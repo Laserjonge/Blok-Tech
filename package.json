@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -12,13 +13,14 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "ISC"
   "bugs": {
     "url": "https://github.com/Laserjonge/Blok-Tech/issues"
   },
   "homepage": "https://github.com/Laserjonge/Blok-Tech#readme",
   "dependencies": {
-    "camelcase": "^6.3.0"
+    "camelcase": "^6.3.0",
+    "express-handlebars": "^6.0.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
