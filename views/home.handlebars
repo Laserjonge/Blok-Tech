@@ -1,3 +1,16 @@
 <h1>Home</h1>
-<p>Home testen</p>
+<p>Home test</p>
 
+{{#if isDisplayName}}
+	<p>My name is {{name}}</p>
+
+	{{else}}
+	<p>No name found!!!</p>
+{{/if}}
+
+{{#if isAgeEnabled}}
+	<p>I am {{age}}</p>
+
+	{{else}}
+	<p>No age provided!</p>
+{{/if}}
