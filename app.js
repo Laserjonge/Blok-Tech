@@ -2,24 +2,35 @@ console.log('hi');
 
 
 const express = require('express');
-const {engine} = require('express-handlebars');
+const expbs = require('express-handlebars');
+const { path } = require('express/lib/application');
+const res = require('express/lib/response');
 const app = express();
 const port = 3000;
 
+const hbs = expbs.create();
 
-app.engine('handlebars', engine());
+app.engine('handlebars', hbs.engine);
+
 app.set('view engine', 'handlebars');
 app.set('views', './views');
 
 app.use(express.static(__dirname + "/static"));
 
+//Routes
 app.get('/', (req, res) => {
   res.render('Home', {
     title: 'Home Page',
+    style: "home.css",
     name: 'Axel de Ruiter',
     age: 21,
     isDisplayName: true,
-    isAgeEnabled: true
+    isAgeEnabled: true,
+    people: [
+      {firstName: "Yehuda", lastName: "Katz"},
+      {firstName: "Carl", lastName: "Lerche"},
+      {firstName: "Alan", lastName: "Johnson"}
+    ]
   });
 });
 
@@ -29,7 +40,8 @@ app.get('/about', (req, res) => {
       firstname: "Axel",
       lastname: "de Ruiters",
     },
-    title: "About"
+    title: "About",
+    style: "about.css"
   });
 });
 
@@ -39,7 +51,8 @@ app.get('/settings', (req, res) => {
 
 app.get('/dashboard', (req, res) => {
   res.render('Dashboard', {
-    isListEnabled: true
+    isListEnabled: true,
+    style: "dashboard.css"
   });
 });
 
@@ -50,9 +63,24 @@ app.get('/each/helper', (req, res) => {
       "Peter",
       "Sadrack",
       "Morissa"
+    ],
+    user: {
+      username: 'accimeesterlin',
+      age: 20,
+      phone: 4647644
+    },
+    lists: [
+      {
+        items: ['Mango', 'Banana', 'Pineapple']
+      },
+
+      {
+        items: ['Potatoe', 'Manioc', 'Avocado']
+      }
     ]
   });
 });
+
 
 app.get('*', (req, res) => {
   res.send('404, niets gevonden');
