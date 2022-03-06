@@ -1,10 +1,7 @@
 console.log('hi');
 
-
 const express = require('express');
 const expbs = require('express-handlebars');
-const { path } = require('express/lib/application');
-const res = require('express/lib/response');
 const app = express();
 const port = 3000;
 
@@ -17,7 +14,7 @@ app.set('views', './views');
 
 app.use(express.static(__dirname + "/static"));
 
-//Routes
+// Routes
 app.get('/', (req, res) => {
   res.render('Home', {
     title: 'Home Page',
@@ -34,16 +31,16 @@ app.get('/', (req, res) => {
   });
 });
 
-app.get('/about', (req, res) => {
-  res.render('About', {
-    person: {
-      firstname: "Axel",
-      lastname: "de Ruiters",
-    },
-    title: "About",
-    style: "about.css"
-  });
-});
+// app.get('/about', (req, res) => {
+//   res.render('About', {
+//     person: {
+//       firstname: "Axel",
+//       lastname: "de Ruiters",
+//     },
+//     title: "About",
+//     style: "about.css"
+//   });
+// });
 
 app.get('/settings', (req, res) => {
   res.render('Settings');
