@@ -3,7 +3,7 @@ console.log('hi');
 const express = require('express');
 const expbs = require('express-handlebars');
 const app = express();
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 8080;
 
 const hbs = expbs.create();
 
