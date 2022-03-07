@@ -32,14 +32,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/about', (req, res) => {
-  res.render('About', {
-    person: {
-      firstname: "Axel",
-      lastname: "de Ruiters",
-    },
-    title: "About",
-    style: "about.css"
-  });
+  res.send('this about');
 });
 
 app.get('/settings', (req, res) => {
