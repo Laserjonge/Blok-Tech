@@ -80,7 +80,7 @@ app.get('/each/helper', (req, res) => {
 
 
 app.get('*', (req, res) => {
-  res.send('404, niets gevonden');
+  res.send('404, niets gevonden...');
 });
 
 
