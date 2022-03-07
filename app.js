@@ -16,7 +16,7 @@ app.use(express.static(__dirname + "/static"));
 
 //Routes
 app.get('/', (req, res) => {
-  res.render('Home', {
+  res.render('home', {
     title: 'Home Page',
     style: "home.css",
     name: 'Axel de Ruiter',
@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/about', (req, res) => {
-  res.render('About', {
+  res.render('about', {
     person: {
       firstname: "Axel",
       lastname: "de Ruiters",
@@ -54,7 +54,7 @@ app.get('/dashboard', (req, res) => {
 });
 
 app.get('/each/helper', (req, res) => {
-  res.render('Contact', {
+  res.render('contact', {
     people: [
       "James",
       "Peter",
