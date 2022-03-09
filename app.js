@@ -1,25 +1,33 @@
-console.log('hi');
+console.log("hi");
 
-const express = require('express');
-const expbs = require('express-handlebars');
+const express = require("express");
+const expbs = require("express-handlebars");
 const app = express();
 const port = process.env.PORT || 3000;
 
+// const connectDB = require("db.js");
+
+// connectDB();
+
 const hbs = expbs.create();
 
-app.engine('handlebars', hbs.engine);
+// app.listen(PORT, () => {
+//   console.log("server running on port", PORT)
+// });
 
-app.set('view engine', 'handlebars');
-app.set('views', './views');
+app.engine("handlebars", hbs.engine);
+
+app.set("view engine", "handlebars");
+app.set("views", "./views");
 
 app.use(express.static(__dirname + "/static"));
 
 //Routes
-app.get('/', (req, res) => {
-  res.render('home', {
-    title: 'Home Page',
+app.get("/", (req, res) => {
+  res.render("home", {
+    title: "Axeleration | Rijden doe je samen!",
     style: "home.css",
-    name: 'Axel de Ruiter',
+    name: "Axel de Ruiter",
     age: 21,
     isDisplayName: true,
     isAgeEnabled: true,
@@ -31,8 +39,8 @@ app.get('/', (req, res) => {
   });
 });
 
-app.get('/about', (req, res) => {
-  res.render('about', {
+app.get("/about", (req, res) => {
+  res.render("about", {
     person: {
       firstname: "Axel",
       lastname: "de Ruiters",
@@ -42,19 +50,19 @@ app.get('/about', (req, res) => {
   });
 });
 
-app.get('/settings', (req, res) => {
-  res.render('Settings');
+app.get("/settings", (req, res) => {
+  res.render("settings");
 });
 
-app.get('/dashboard', (req, res) => {
-  res.render('Dashboard', {
+app.get("/dashboard", (req, res) => {
+  res.render("Dashboard", {
     isListEnabled: true,
     style: "dashboard.css"
   });
 });
 
-app.get('/each/helper', (req, res) => {
-  res.render('contact', {
+app.get("/each/helper", (req, res) => {
+  res.render("contact", {
     people: [
       "James",
       "Peter",
@@ -62,25 +70,25 @@ app.get('/each/helper', (req, res) => {
       "Morissa"
     ],
     user: {
-      username: 'accimeesterlin',
+      username: "accimeesterlin",
       age: 20,
       phone: 4647644
     },
     lists: [
       {
-        items: ['Mango', 'Banana', 'Pineapple']
+        items: ["Mango", "Banana", "Pineapple"]
       },
 
       {
-        items: ['Potatoe', 'Manioc', 'Avocado']
+        items: ["Potatoe", "Manioc", "Avocado"]
       }
     ]
   });
 });
 
 
-app.get('*', (req, res) => {
-  res.send('404, niets gevonden...');
+app.get("*", (req, res) => {
+  res.send("404, niets gevonden...");
 });
 
 

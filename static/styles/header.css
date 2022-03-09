@@ -1,0 +1,27 @@
+@font-face {
+	font-family: icons-font_axeleration;
+	src: url("../fonts/icons-font_axeleration.ttf") format("truetype");
+  }
+
+menu {
+	margin: .5em 1em 0 1em;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	/* width: 100%; */
+}
+
+nav menu li:first-of-type a img {
+	height: 2em;
+	border-radius: 50%;
+}
+
+nav menu li:nth-last-of-type(2) img {
+	height: 1.2em;
+}
+
+menu li:nth-of-type(3) a {
+	font-family: "icons-font_axeleration", sans-serif;
+	font-size: 2em;
+	color: 	#808080;
+}
