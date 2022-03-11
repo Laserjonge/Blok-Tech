@@ -1,8 +1,8 @@
 const express = require("express");
 const {engine} = require("express-handlebars");
-const PORT = 3000
-// require("dotenv").config()
-// const connectDB = require("./config/db")
+const PORT = process.env.PORT || 3000
+require("dotenv").config()
+const connectDB = require("./config/db")
 
 const app = express()
 
