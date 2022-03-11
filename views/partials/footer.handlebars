@@ -1,5 +1,16 @@
 <footer>
-	<div>
-		<p>I am the Footer</p>
-	</div>
+  <menu>
+
+    {{#if ifMenuItemActive}}
+      <li><a class="menu-item-active" href="">Swipen</a></li>
+      <li></li>
+      <li><a href="/chatten">Chatten</a></li>
+
+    {{else}}
+      <li><a href="/">Swipen</a></li>
+      <li></li>
+      <li><a class="menu-item-active" href="">Chatten</a></li>
+    {{/if}}
+
+  </menu>
 </footer>

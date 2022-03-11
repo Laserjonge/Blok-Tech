@@ -10,7 +10,7 @@ const connectDB = () => {
 		console.log("DB - connected")
 	} catch (err) {
 		console.log("error occurred while trying to connect to db:", err);
-		trow err;
+		throw err;
 	}
 };
 

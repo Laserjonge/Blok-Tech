@@ -1,20 +1,55 @@
 {{> header}}
 
-<h1>Home</h1>
-<p>Home test</p>
 
-{{#if isDisplayName}}
-	<p>My name is {{name}}</p>
+<ul class="profiles">
+  <li>
+	<div class="image-filter"></div>
+    <img src="media/02_profile-picture.png" alt="" />
+	<h2>Tessa<span>43</span></h2>
+	<p>Zaanstad</p>
+	<p>Auto, motor</p>
+	<p>70%</p>
+	<button>Like</button>
+	<button>A</button>
+	<button>Dislike</button>
+  </li>
+  <li>
+	<div class="image-filter"></div>
+    <img src="media/03_profile-picture.png" alt="" />
+  </li>
+  <li>
+  	<div class="image-filter"></div>
+    <img src="media/04_profile-picture.png" alt="" />
+  </li>
+  <li>
+	<div class="image-filter"></div>
+    <img src="media/05_profile-picture.png" alt="" />
+  </li>
+  <li>
+	<div class="image-filter"></div>
+    <img src="media/06_profile-picture.png" alt="" />
+  </li>
+  <li>
+	<div class="image-filter"></div>
+    <img src="media/07_profile-picture.png" alt="" />
+  </li>
+  <li>
+	<div class="image-filter"></div>
+    <img src="media/08_profile-picture.png" alt="" />
+  </li>
+  <li>
+	<div class="image-filter"></div>
+    <img src="media/09_profile-picture.png" alt="" />
+  </li>
+  <li>
+	<div class="image-filter"></div>
+    <img src="media/10_profile-picture.png" alt="" />
+  </li>
+  <li>
+	<div class="image-filter"></div>
+    <img src="media/11_profile-picture.png" alt="" />
+  </li>
+</ul>
 
-	{{else}}
-	<p>No name found!!!</p>
-{{/if}}
-
-{{#if isAgeEnabled}}
-	<p>I am {{age}}</p>
-
-	{{else}}
-	<p>No age provided!</p>
-{{/if}}
 
 {{> footer}}
