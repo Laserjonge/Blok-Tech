@@ -1,0 +1,28 @@
+<header>
+  <nav>
+    <menu>
+      <li><a href=""><img src="media/01_profile-picture.png" /></a></li>
+      <li><img src="media/logo_axeleration.svg" /></li>
+      <li><a class="settings-button" href="/">B</a></li>
+    </menu>
+  </nav>
+</header>
+<main>
+	<ul class="profiles">
+			{{#each users}}
+  <li>
+	<div class="image-filter"></div>
+    <img src="media/02_profile-picture.png" alt="" />
+	<h2>{{name}}<span>{{age}}</span></h2>
+	<p>{{city}}</p>
+	<p>Auto, motor</p>
+	<p>70%</p>
+	<button>Like</button>
+	<button>A</button>
+	<button>Dislike</button>
+  </li>
+	{{/each}}
+	</ul>
+
+</main>
+

@@ -1,0 +1,41 @@
+<header>
+  <nav>
+    <menu>
+      <li><a href=""><img src="media/01_profile-picture.png" /></a></li>
+      <li><img src="media/logo_axeleration.svg" /></li>
+      <li><a class="settings-button" href="/">B</a></li>
+    </menu>
+  </nav>
+</header>
+
+<form action="/inloggen" method="POST">
+  <p>Voertuig:</p>
+  <div>
+    <input type="radio" id="auto" name="voertuig" value="auto"/>
+    <label for="auto">Auto</label>
+  </div>
+  <div>
+  <input type="radio" id="motor" name="voertuig" value="motor"/>
+  <label for="motor">Motor</label>
+  </div>
+  <div>
+  <input type="radio" id="scooter" name="voertuig" value="scooter"/>
+  <label for="scooter">Scooter</label>
+  </div>
+
+  <p>Geslacht:</p>
+    <div>
+  <input type="radio" id="iedereen" name="geslacht" value="iedereen" checked/>
+  <label for="iedereen">Iedereen</label>
+  <div>
+<div>
+  <input type="radio" id="man" name="geslacht" value="man"/>
+  <label for="man">Man</label>
+  </div>
+  <div>
+  <input type="radio" id="vrouw" name="geslacht" value="vrouw"/>
+  <label for="vrouw">Vrouw</label>
+  </div>
+  </div>
+    <input type="submit" value="Opslaan"/>
+</form>
