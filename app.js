@@ -6,12 +6,12 @@ require("dotenv").config()
 const connectDB = require("./config/db")
 const bodyParser = require("body-parser");
 const { request } = require("express");
-const User = require("./models/User");
+const user = require("./models/user");
+const { default: mongoose } = require("mongoose");
 
 const app = express()
 
 connectDB();
-
 
 app.engine("handlebars", engine());
 app.set("view engine", "handlebars");
@@ -22,13 +22,17 @@ app.use(bodyParser.urlencoded({ extended: true}));
 app.use(express.static(__dirname + "/static"));
 
 
-//Routes
-app.get("/", (req, res) => {
-  res.render("home", {
-    title: "Axeleration | Rijden doe je samen!",
-    ifMenuItemActive: true
-  });
-});
+app.get('/',(req,res) => {
+  user.find().lean().then(users => {
+    console.log(users);
+    res.render('home', {
+      title: "Axeleration | Rijden doe je samen!",
+      ifMenuItemActive: true,
+      
+      users:users
+    });
+  })
+})
 
 
 app.get("/chatten", (req, res) => {
@@ -43,22 +47,11 @@ app.get("/settings", (req, res) => {
   });
 });
 
+
 app.post ("/inloggen", (req, res) => {
   console.log (req.body)
   res.send (req.body)
 })
-
-app.get('/users',(req,res) => {
-  User.find().lean().then(users => {
-
-    console.log(users);
-
-
-    res.render('users', {
-      users:users,
-    });
-  })
-} )
 
 
 app.get("*", (req, res) => {

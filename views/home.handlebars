@@ -1,55 +1,21 @@
 {{> header}}
 
 
-<ul class="profiles">
+	<ul class="profiles">
+			{{#each users}}
   <li>
 	<div class="image-filter"></div>
-    <img src="media/02_profile-picture.png" alt="" />
-	<h2>Tessa<span>43</span></h2>
-	<p>Zaanstad</p>
-	<p>Auto, motor</p>
-	<p>70%</p>
-	<button>Like</button>
-	<button>A</button>
-	<button>Dislike</button>
+    <img src="{{pad}}" alt=""/>
+	<h2>{{name}}<span>{{age}}</span></h2>
+	<p>{{city}}</p>
+	<p>{{vehicle}}</p>
+	<div>
+		<button>Dislike</button>
+		<button>Like</button>
+	</div>
   </li>
-  <li>
-	<div class="image-filter"></div>
-    <img src="media/03_profile-picture.png" alt="" />
-  </li>
-  <li>
-  	<div class="image-filter"></div>
-    <img src="media/04_profile-picture.png" alt="" />
-  </li>
-  <li>
-	<div class="image-filter"></div>
-    <img src="media/05_profile-picture.png" alt="" />
-  </li>
-  <li>
-	<div class="image-filter"></div>
-    <img src="media/06_profile-picture.png" alt="" />
-  </li>
-  <li>
-	<div class="image-filter"></div>
-    <img src="media/07_profile-picture.png" alt="" />
-  </li>
-  <li>
-	<div class="image-filter"></div>
-    <img src="media/08_profile-picture.png" alt="" />
-  </li>
-  <li>
-	<div class="image-filter"></div>
-    <img src="media/09_profile-picture.png" alt="" />
-  </li>
-  <li>
-	<div class="image-filter"></div>
-    <img src="media/10_profile-picture.png" alt="" />
-  </li>
-  <li>
-	<div class="image-filter"></div>
-    <img src="media/11_profile-picture.png" alt="" />
-  </li>
-</ul>
+	{{/each}}
+	</ul>
 
 
 {{> footer}}

@@ -12,14 +12,14 @@
 			{{#each users}}
   <li>
 	<div class="image-filter"></div>
-    <img src="media/02_profile-picture.png" alt="" />
+    <img src="media/02_profile-picture.png" alt=""/>
 	<h2>{{name}}<span>{{age}}</span></h2>
 	<p>{{city}}</p>
-	<p>Auto, motor</p>
-	<p>70%</p>
-	<button>Like</button>
-	<button>A</button>
-	<button>Dislike</button>
+	<p>{{vehicle}}</p>
+	<div>
+		<button>Dislike</button>
+		<button>Like</button>
+	</div>
   </li>
 	{{/each}}
 	</ul>
