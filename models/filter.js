@@ -1,23 +1,19 @@
-const  mongoose  = require("mongoose");
+//////////////////
+// FILTER MODEL //
+//////////////////
+const mongoose = require("mongoose");
 
 const filterSchema = new mongoose.Schema({
+  voertuig: {
+    type: String,
+    required: true,
+  },
+  geslacht: {
+    type: String,
+    required: true,
+  },
+});
 
-    voertuig:{
-        type:String,
-        required:true,
-    },
-
-    geslacht:{
-        type:String,
-        required:true,
-    },
-    
-})
-
-
-
-const filter = mongoose.model('filter-form', filterSchema);
-
-
+const filter = mongoose.model("filter-form", filterSchema);
 
 module.exports = filter;

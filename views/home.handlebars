@@ -1,21 +1,21 @@
 {{> header}}
 
+  <ul class="profiles">
 
-	<ul class="profiles">
-			{{#each users}}
-  <li>
-	<div class="image-filter"></div>
-    <img src="{{pad}}" alt=""/>
-	<h2>{{name}}<span>{{age}}</span></h2>
-	<p>{{city}}</p>
-	<p>{{vehicle}}</p>
-	<div>
-		<button>Dislike</button>
-		<button>Like</button>
-	</div>
-  </li>
-	{{/each}}
-	</ul>
-
+    {{#each users}}
+      <li>
+        <div class="image-filter"></div>
+        <img src="{{pad}}" alt=""/>
+        <h2>{{name}}<span>{{age}}</span></h2>
+        <p>{{city}}</p>
+        <p>{{vehicle}}</p>
+        <div>
+	      <button>Dislike</button>
+          <button>Like</button>
+        </div>
+      </li>
+    {{/each}}
+	
+  </ul>
 
 {{> footer}}

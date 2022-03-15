@@ -8,21 +8,20 @@
   </nav>
 </header>
 <main>
-	<ul class="profiles">
-			{{#each users}}
-  <li>
-	<div class="image-filter"></div>
-    <img src="media/02_profile-picture.png" alt=""/>
-	<h2>{{name}}<span>{{age}}</span></h2>
-	<p>{{city}}</p>
-	<p>{{vehicle}}</p>
-	<div>
-		<button>Dislike</button>
-		<button>Like</button>
-	</div>
-  </li>
-	{{/each}}
-	</ul>
+  <ul class="profiles">
+    {{#each users}}
+      <li>
+        <div class="image-filter"></div>
+        <img src="media/02_profile-picture.png" alt="" />
+        <h2>{{name}}<span>{{age}}</span></h2>
+        <p>{{city}}</p>
+        <p>{{vehicle}}</p>
+        <div>
+          <button>Dislike</button>
+          <button>Like</button>
+        </div>
+      </li>
+    {{/each}}
+  </ul>
 
 </main>
-

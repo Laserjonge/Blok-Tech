@@ -1,17 +1,25 @@
-// require mongoose for model implementation
+/////////////////////////////
+// MONGOOSE IMPLEMENTATION //
+/////////////////////////////
 const mongoose = require("mongoose");
-// connect DB - throw err when fails
+
+
+/////////////////////////
+// DATABASE CONNECTION //
+/////////////////////////
 const connectDB = () => {
-	try {
-		mongoose.connect(process.env.CONNECTION_STRING, {
-			useNewUrlParser: true,
-			useUnifiedTopology: true
-		});
-		console.log("DB - connected")
-	} catch (err) {
-		console.log("error occurred while trying to connect to db:", err);
-		throw err;
-	}
+  try {
+    mongoose.connect(process.env.CONNECTION_STRING, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log("DB - connected");
+  } catch (err) {
+
+// THROWS ERROR WHEN SOMETHING GOES WRONG //
+    console.log("error occurred while trying to connect to db:", err);
+    throw err;
+  }
 };
 
 module.exports = connectDB;
