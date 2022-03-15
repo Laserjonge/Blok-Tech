@@ -24,7 +24,6 @@ app.set("view engine", "handlebars");
 app.set("views", "./views");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/static"));
-app.use(express.static(__dirname + "/models"));
 
 
 ////////////
