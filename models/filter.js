@@ -16,7 +16,7 @@ const filterSchema = new mongoose.Schema({
 
 
 
-const filter = mongoose.model('filter', filterSchema);
+const filter = mongoose.model('filter-form', filterSchema);
 
 
 

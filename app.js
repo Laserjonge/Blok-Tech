@@ -1,5 +1,5 @@
-const { Router } = require("express");
 const express = require("express");
+const { Router } = require("express");
 const {engine} = require("express-handlebars");
 const PORT = process.env.PORT || 3000
 require("dotenv").config()
@@ -7,6 +7,7 @@ const connectDB = require("./config/db")
 const bodyParser = require("body-parser");
 const { request } = require("express");
 const user = require("./models/user");
+const filter = require("./models/filter");
 const { default: mongoose } = require("mongoose");
 
 const app = express()
@@ -46,6 +47,19 @@ app.get("/settings", (req, res) => {
     title: "Instellingen | Axeleration"
   });
 });
+
+
+app.get('/inloggen',(req,res) => {
+  filter.insert().lean().then(filters => {
+    console.log(filter);
+    res.render('home', {
+      title: "Axeleration | Rijden doe je samen!",
+      ifMenuItemActive: true,
+      
+      filters:filters
+    });
+  })
+})
 
 
 app.post ("/inloggen", (req, res) => {
