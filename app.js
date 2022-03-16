@@ -30,19 +30,29 @@ app.use(express.static(__dirname + "/static"));
 ///ROUTES///
 ////////////
 app.get("/", (req, res) => {
-  user
-    .find()
-    .lean()
-    .then((users) => {
-      console.log(users);
-      res.render("home", {
-        title: "Axeleration | Rijden doe je samen!",
-        ifMenuItemActive: true,
 
-        users: users,
-      });
+  user.find().lean().then((users) => {
+    const filter = {
+      voertuig: 'Auto',
+      geslacht: 'vrouw',
+    };
+
+    const filteredusers = users.filter((user) => {
+        if(user.vehicle == filter.voertuig && user.gender == filter.geslacht){
+          return user;
+        }
+    })
+    console.log(filteredusers);
+    console.log(users);
+    res.render("home", {
+      title: "Axeleration | Rijden doe je samen!",
+      ifMenuItemActive: true,
+
+      users: filteredusers,
     });
+  });
 });
+
 
 app.get("/chatten", (req, res) => {
   res.render("chats", {
@@ -74,6 +84,10 @@ app.get("/inloggen", (req, res) => {
 app.post("/inloggen", (req, res) => {
   console.log(req.body);
   res.send(req.body);
+  filter.create({
+    voertuig: req.body.voertuig,
+    geslacht: req.body.geslacht
+  })
 });
 
 app.get("*", (req, res) => {
