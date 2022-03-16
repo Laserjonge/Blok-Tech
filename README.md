@@ -13,7 +13,7 @@ To sign-up choose if you are a student or an instructor go on creating your prof
 This application is build with:
 
 ## Installation
-Installation is not required for this application, just go to http://axeleration.nl/
+Installation is not required for this application, just go to http://axeleration.heroku.com/
 
 ## Contact
 Axel de Ruiter
