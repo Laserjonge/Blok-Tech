@@ -9,14 +9,14 @@ require("dotenv").config();
 const connectDB = require("./config/db");
 const bodyParser = require("body-parser");
 const { request } = require("express");
-const User = require("./models/user");
-const Filter = require("./models/a;lbsinpu");
 const { default: mongoose } = require("mongoose");
+const User = require("./models/user");
+const Filter = require("./models/Filter");
 const { redirect } = require("express/lib/response");
 const app = express();
 connectDB();
 
-//
+
 /////////////////////////////// 
 // REFERENCES TO THE FOLDERS //
 ///////////////////////////////
