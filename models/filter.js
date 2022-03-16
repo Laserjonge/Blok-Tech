@@ -4,11 +4,11 @@
 const mongoose = require("mongoose");
 
 const filterSchema = new mongoose.Schema({
-  voertuig: {
+  vehicle: {
     type: String,
     required: true,
   },
-  geslacht: {
+  gender: {
     type: String,
     required: true,
   },

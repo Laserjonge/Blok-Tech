@@ -10,8 +10,9 @@ const connectDB = require("./config/db");
 const bodyParser = require("body-parser");
 const { request } = require("express");
 const user = require("./models/user");
-const filter = require("./models/filter");
+const Filter = require("./models/filter");
 const { default: mongoose } = require("mongoose");
+const { redirect } = require("express/lib/response");
 const app = express();
 connectDB();
 
@@ -29,26 +30,21 @@ app.use(express.static(__dirname + "/static"));
 ////////////
 ///ROUTES///
 ////////////
-app.get("/", (req, res) => {
+app.get("/", async (req, res) => {
 
-  user.find().lean().then((users) => {
-    const filter = {
-      voertuig: 'Auto',
-      geslacht: 'vrouw',
-    };
+  const filter = await Filter.findOne().sort({_id: -1}).lean();
+  // const filter = {
+  //   vehicle: 'Auto',
+  //   gender: 'vrouw',
+  // };
+  console.log(filter);
+  user.find({ vehicle: filter.vehicle, gender: filter.gender }).lean().then((users) => {
 
-    const filteredusers = users.filter((user) => {
-        if(user.vehicle == filter.voertuig && user.gender == filter.geslacht){
-          return user;
-        }
-    })
-    console.log(filteredusers);
-    console.log(users);
     res.render("home", {
       title: "Axeleration | Rijden doe je samen!",
       ifMenuItemActive: true,
 
-      users: filteredusers,
+      users: users,
     });
   });
 });
@@ -67,11 +63,11 @@ app.get("/settings", (req, res) => {
 });
 
 app.get("/inloggen", (req, res) => {
-  filter
+  Filter
     .insert()
     .lean()
     .then((filters) => {
-      console.log(filter);
+      console.log(filters);
       res.render("home", {
         title: "Axeleration | Rijden doe je samen!",
         ifMenuItemActive: true,
@@ -81,13 +77,15 @@ app.get("/inloggen", (req, res) => {
     });
 });
 
-app.post("/inloggen", (req, res) => {
+app.post("/inloggen", async(req, res) => {
   console.log(req.body);
-  res.send(req.body);
-  filter.create({
-    voertuig: req.body.voertuig,
-    geslacht: req.body.geslacht
+  // res.send(req.body);
+  await Filter.create({
+    vehicle: req.body.vehicle,
+    gender: req.body.gender
   })
+
+  res.redirect('/')
 });
 
 app.get("*", (req, res) => {

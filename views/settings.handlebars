@@ -11,31 +11,29 @@
 <form method="POST" action="/inloggen">
   <p>Voertuig:</p>
   <div>
-    <input type="radio" id="auto" name="voertuig" value="auto"/>
+    <input type="radio" id="auto" name="vehicle" value="auto"/>
     <label for="auto">Auto</label>
   </div>
   <div>
-  <input type="radio" id="motor" name="voertuig" value="motor"/>
-  <label for="motor">Motor</label>
+    <input type="radio" id="motor" name="vehicle" value="motor"/>
+    <label for="motor">Motor</label>
   </div>
   <div>
-  <input type="radio" id="scooter" name="voertuig" value="scooter"/>
-  <label for="scooter">Scooter</label>
+    <input type="radio" id="scooter" name="vehicle" value="scooter"/>
+    <label for="scooter">Scooter</label>
   </div>
 
   <p>Geslacht:</p>
     <div>
-  <input type="radio" id="iedereen" name="geslacht" value="iedereen" checked/>
-  <label for="iedereen">Iedereen</label>
-  <div>
-<div>
-  <input type="radio" id="man" name="geslacht" value="man"/>
-  <label for="man">Man</label>
+
+      <div>
+        <input type="radio" id="man" name="gender" value="man"/>
+        <label for="man">Man</label>
+      </div>
+    <div>
+    <input type="radio" id="vrouw" name="gender" value="vrouw"/>
+    <label for="vrouw">Vrouw</label>
   </div>
-  <div>
-  <input type="radio" id="vrouw" name="geslacht" value="vrouw"/>
-  <label for="vrouw">Vrouw</label>
-  </div>
-  </div>
+
     <input type="submit" value="Opslaan"/>
 </form>
