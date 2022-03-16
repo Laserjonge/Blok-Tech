@@ -9,8 +9,8 @@ require("dotenv").config();
 const connectDB = require("./config/db");
 const bodyParser = require("body-parser");
 const { request } = require("express");
-const user = require("models/User.js");
-const filter = require("models/Filter.js");
+const User = require("./models/user");
+const Filter = require("./models/filter");
 const { default: mongoose } = require("mongoose");
 const { redirect } = require("express/lib/response");
 const app = express();
@@ -38,7 +38,7 @@ app.get("/", async (req, res) => {
   //   gender: 'vrouw',
   // };
   console.log(filter);
-  user.find({ vehicle: filter.vehicle, gender: filter.gender }).lean().then((users) => {
+  User.find({ vehicle: filter.vehicle, gender: filter.gender }).lean().then((users) => {
 
     res.render("home", {
       title: "Axeleration | Rijden doe je samen!",
