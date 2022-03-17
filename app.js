@@ -28,15 +28,12 @@ app.use(express.static(__dirname + "/static"));
 
 
 ////////////
-///ROUTES///
+// ROUTES //
 ////////////
 app.get("/", async (req, res) => {
 
   const filter = await Filter.findOne().sort({_id: -1}).lean();
-  // const filter = {
-  //   vehicle: 'Auto',
-  //   gender: 'vrouw',
-  // };
+
   console.log(filter);
   User.find({ vehicle: filter.vehicle, gender: filter.gender }).lean().then((users) => {
 
@@ -49,6 +46,12 @@ app.get("/", async (req, res) => {
   });
 });
 
+// app.get("/" ,(req, res) => {
+//   res.render("home", {
+//     title: "Axeleration | Rijden doe je samen!",
+//     ifMenuItemActive: true,
+//   });
+// });
 
 app.get("/chatten", (req, res) => {
   res.render("chats", {
@@ -85,7 +88,7 @@ app.post("/inloggen", async(req, res) => {
     gender: req.body.gender
   })
 
-  res.redirect('/')
+  res.redirect("/")
 });
 
 app.get("*", (req, res) => {
