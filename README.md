@@ -44,7 +44,7 @@ If you would like to use my code locally, clone my repository by using the follo
 
 ## Contact
 Axel de Ruiter
-
+<br>
 Tech-1
-
+<Br>
 axel.de.ruiter@hva.nl
