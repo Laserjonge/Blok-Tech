@@ -24,9 +24,9 @@ Installation is not required for this application, just go to http://axeleration
 
 If you would like to use my code locally, clone my repository by using the following command lines:
 
-1. ```git clone https://github.com/Laserjonge/Blok-Tech.git```
+1. `git clone https://github.com/Laserjonge/Blok-Tech.git`
 
-1. ``npm install --save-dev nodemon``
+1. `npm install --save-dev nodemon`
 
 1. `npm install express`
 
@@ -40,7 +40,7 @@ If you would like to use my code locally, clone my repository by using the follo
 
 1. `npm install body-parser`
 
-1. Comment out the first "/" route and uncomment the second "/" route.
+1. Comment out the first "/" route (app.js line 33 to 48) and uncomment the second "/" route (line 49 to 55).
 
 ## Contact
 Axel de Ruiter
