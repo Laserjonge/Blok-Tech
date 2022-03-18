@@ -3,12 +3,12 @@
     <menu>
       <li><a href=""><img src="media/01_profile-picture.png" /></a></li>
       <li><img src="media/logo_axeleration.svg" /></li>
-      <li><a class="settings-button" href="/">B</a></li>
+      <li><a id="settings-a" href="/">A</a></li>
     </menu>
   </nav>
 </header>
 
-<form method="POST" action="/inloggen">
+<form class="page-form" method="POST" action="/inloggen">
   <p>Voertuig:</p>
   <div>
     <input type="radio" id="auto" name="vehicle" value="auto"/>
@@ -25,15 +25,14 @@
 
   <p>Geslacht:</p>
     <div>
-
-      <div>
-        <input type="radio" id="man" name="gender" value="man"/>
-        <label for="man">Man</label>
-      </div>
+      <input type="radio" id="man" name="gender" value="man"/>
+      <label for="man">Man</label>
+    </div>
     <div>
-    <input type="radio" id="vrouw" name="gender" value="vrouw"/>
-    <label for="vrouw">Vrouw</label>
-  </div>
-
-    <input type="submit" value="Opslaan"/>
+      <input type="radio" id="vrouw" name="gender" value="vrouw"/>
+      <label for="vrouw">Vrouw</label>
+    </div>
+    <div>
+      <input type="submit" value="Opslaan"/>
+    </div>
 </form>

@@ -40,7 +40,7 @@ If you would like to use my code locally, clone my repository by using the follo
 
 1. `npm install body-parser`
 
-1. Comment out the first "/" route (app.js line 33 to 48) and uncomment the second "/" route (line 49 to 55).
+1. Comment out the first "/" route (app.js line 33 to 48) and uncomment the second "/" route (app.js line 49 to 55).
 
 ## Contact
 Axel de Ruiter
