@@ -1,6 +1,6 @@
-/////////
+/// //////
 // ES5 //
-/////////
+/// //////
 // var settingsButton = document.querySelector(".settings-button")
 
 // settingsButton.addEventListener("click", toggleMenu);
@@ -16,12 +16,14 @@
 
 // settingsButtonPosition();
 
-
-/////////
+/// //////
 // ES6 //
-/////////
-const settingsButton = document.querySelector(".settings-button")
-
-settingsButton.addEventListener("click", toggleMenu = () => document.querySelector(".pop-up-form").classList.toggle("pop-up-function"));
-
-settingsButtonPosition = (settingsButton.classList.add("button-position"));
+/// //////
+// PROGRESSIVE ENHANCEMENT //
+const settingsButton = document.querySelector('.settings-button');
+settingsButton.addEventListener(
+  'click',
+  (toggleMenu = () =>
+    document.querySelector('.pop-up-form').classList.toggle('pop-up-function'))
+);
+settingsButtonPosition = settingsButton.classList.add('  button-position');

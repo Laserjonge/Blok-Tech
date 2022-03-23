@@ -26,6 +26,10 @@ html {
   user-select: none;
 }
 
+body {
+  font-family: filson-pro, sans-serif;
+}
+
 /******************/
 /* HEADER STYLING */
 /******************/
@@ -111,7 +115,6 @@ footer li:nth-of-type(2) {
 }
 
 footer {
-  font-family: filson-pro, sans-serif;
   font-style: normal;
   z-index: 1;
 }
@@ -163,7 +166,6 @@ footer a {
 
 .profiles h2 {
   position: absolute;
-  font-family: filson-pro, sans-serif;
   color: #f5f5f5;
   font-size: 2em;
   left: .5em;
@@ -181,7 +183,6 @@ footer a {
 
 .profiles p {
   position: absolute;
-  font-family: filson-pro, sans-serif;
   font-weight: 400;
   color: #f5f5f5;
   font-size: 1em;

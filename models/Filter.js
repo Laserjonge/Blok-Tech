@@ -1,7 +1,7 @@
-//////////////////
+/// ///////////////
 // FILTER MODEL //
-//////////////////
-const mongoose = require("mongoose");
+/// ///////////////
+const mongoose = require('mongoose');
 
 const filterSchema = new mongoose.Schema({
   vehicle: {
@@ -14,6 +14,6 @@ const filterSchema = new mongoose.Schema({
   },
 });
 
-const filter = mongoose.model("filter-form", filterSchema);
+const filter = mongoose.model('filter-form', filterSchema);
 
 module.exports = filter;
