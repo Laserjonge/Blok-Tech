@@ -20,10 +20,8 @@
 // ES6 //
 /// //////
 // PROGRESSIVE ENHANCEMENT //
-const settingsButton = document.querySelector('.settings-button');
-settingsButton.addEventListener(
-  'click',
-  (toggleMenu = () =>
-    document.querySelector('.pop-up-form').classList.toggle('pop-up-function'))
-);
-settingsButtonPosition = settingsButton.classList.add('  button-position');
+const settingsButton = document.querySelector(".settings-button")
+
+settingsButton.addEventListener("click", toggleMenu = () => document.querySelector(".pop-up-form").classList.toggle("pop-up-function"));
+
+settingsButtonPosition = (settingsButton.classList.add("button-position")); 
