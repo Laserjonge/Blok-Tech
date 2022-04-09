@@ -258,3 +258,13 @@ footer a {
 form.pop-up-function {
   transform: translateX(0);
 }
+
+#map {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 4em;
+  left: 0;
+  background-color: #49c1f0;
+  z-index: 3;
+}

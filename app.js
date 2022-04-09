@@ -34,9 +34,7 @@ app.get('/', async (req, res) => {
   const filter = await Filter.findOne().sort({ _id: -1 }).lean();
 
   console.log(filter);
-  User.find({ vehicle: filter.vehicle, gender: filter.gender })
-    .lean()
-    .then((users) => {
+  User.find({ vehicle: filter.vehicle, gender: filter.gender }).lean().then((users) => {
       res.render('home', {
         title: 'Axeleration | Rijden doe je samen!',
         ifMenuItemActive: true,
@@ -53,9 +51,9 @@ app.get('/', async (req, res) => {
 //   });
 // });
 
-app.get('/chatten', (req, res) => {
+app.get('/locaties', (req, res) => {
   res.render('chats', {
-    title: 'Chatten | Axeleration',
+    title: 'locaties | Axeleration',
   });
 });
 
@@ -100,3 +98,5 @@ app.get('*', (req, res) => {
 app.listen(PORT, () => {
   console.log('Example app listening on port ${PORT}');
 });
+
+
